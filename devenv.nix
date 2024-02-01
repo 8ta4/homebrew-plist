@@ -32,6 +32,16 @@
       enable = true;
       entry = lib.mkForce "${pkgs.nodePackages.prettier}/bin/prettier --ignore-unknown --write";
     };
+
+    trailing-whitespace = {
+      enable = true;
+
+      # https://github.com/pre-commit/pre-commit-hooks/blob/4b863f127224b6d92a88ada20d28a4878bf4535d/.pre-commit-hooks.yaml#L204
+      entry = "${pkgs.python3Packages.pre-commit-hooks}/bin/trailing-whitespace-fixer";
+
+      # https://github.com/pre-commit/pre-commit-hooks/blob/4b863f127224b6d92a88ada20d28a4878bf4535d/.pre-commit-hooks.yaml#L206
+      types = [ "text" ];
+    };
   };
 
   # https://devenv.sh/processes/
