@@ -35,7 +35,16 @@
       enable = true;
       entry = lib.mkForce "${pkgs.nodePackages.prettier}/bin/prettier --ignore-unknown --write";
     };
+    rubocop = {
+      enable = true;
 
+      # https://github.com/rubocop/rubocop/blob/c27c74ef47b955fab6ccb844f19e4db44ca7217a/.pre-commit-hooks.yaml#L4
+      # https://github.com/rubocop/rubocop/blob/c27c74ef47b955fab6ccb844f19e4db44ca7217a/.pre-commit-hooks.yaml#L7
+      entry = "${pkgs.rubyPackages.rubocop}/bin/rubocop --autocorrect --force-exclusion";
+
+      # https://github.com/rubocop/rubocop/blob/c27c74ef47b955fab6ccb844f19e4db44ca7217a/.pre-commit-hooks.yaml#L6
+      types = [ "ruby" ];
+    };
     trailing-whitespace = {
       enable = true;
 
