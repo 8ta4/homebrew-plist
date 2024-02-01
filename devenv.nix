@@ -27,6 +27,7 @@
       # https://github.com/gitleaks/gitleaks/blob/76c9e3175bc88e4520494f160cc90c1d6231fb82/.pre-commit-hooks.yaml#L4
       entry = "${pkgs.gitleaks}/bin/gitleaks protect --verbose --redact --staged";
     };
+    nixpkgs-fmt.enable = true;
   };
 
   # https://devenv.sh/processes/
