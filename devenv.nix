@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # https://devenv.sh/basics/
@@ -28,6 +28,10 @@
       entry = "${pkgs.gitleaks}/bin/gitleaks protect --verbose --redact --staged";
     };
     nixpkgs-fmt.enable = true;
+    prettier = {
+      enable = true;
+      entry = lib.mkForce "${pkgs.nodePackages.prettier}/bin/prettier --ignore-unknown --write";
+    };
   };
 
   # https://devenv.sh/processes/
