@@ -2,9 +2,9 @@
 
 # This class represents a Homebrew formula for the plist project.
 class Plist < Formula
-  version '0.1.0'
+  version '0.1.1'
   url "https://github.com/8ta4/plist/releases/download/v#{version}/plist.tar.gz"
-  sha256 '6b13fb9a4c22750d5bf7f14943db1450e55a0037a6ff9c2cb3d4c22fd739adc2'
+  sha256 'c5843a39dc26fe78800bcc55405bbb1115908633250aed00a81dcdc944730e29'
 
   depends_on 'fswatch'
   depends_on 'node'
