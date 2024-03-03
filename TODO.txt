@@ -1,0 +1,1 @@
+Eliminate extra blank lines before comments.
